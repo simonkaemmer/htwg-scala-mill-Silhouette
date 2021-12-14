@@ -2,7 +2,7 @@ import com.typesafe.sbt.SbtScalariform._
 
 import scalariform.formatter.preferences._
 
-name := "play-silhouette-seed"
+name := "htwg-scala-mill-Silhouette"
 
 version := "6.0.0"
 
@@ -34,8 +34,10 @@ libraryDependencies ++= Seq(
   guice,
   filters
 )
-
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val BaseProject = ProjectRef(uri("Welches Git?"), "") // TODO: welches Git? Niklas hat hier ein neues..
+lazy val root = (project in file("."))
+  .enablePlugins(PlayScala)
+  .dependsOn()
 
 routesImport += "utils.route.Binders._"
 
